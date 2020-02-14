@@ -1,4 +1,4 @@
-import { DoctorService } from './doctor-service';
+// import { DoctorService } from './doctor-service';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,19 +11,21 @@ $(document).ready(function() {
     var medIssue = $("input#med-issue").val();
     var drName = $("input#dr-name").val();
 
-    (async () => {
-      let doctorService = new DoctorService();
-      const response = await doctorService.getDoctorService(medIssue,drName);
-      getElements();
-    });
+    $("p#doctors").text(medIssue + " " + drName);
 
-    function getElements(response) {
-      if(response) {
-        $("p#doctors").text(`${response}`);
-      } else {
-        $("p#doctors").text("No doctors for you.");
-      }
-    }
+    // (async () => {
+    //   let doctorService = new DoctorService();
+    //   const response = await doctorService.getDoctorService(medIssue,drName);
+    //   getElements();
+    // });
+
+    // function getElements(response) {
+    //   if(response) {
+    //     $("p#doctors").text(`${response}`);
+    //   } else {
+    //     $("p#doctors").text("No doctors for you.");
+    //   }
+    // }
 
   });
 });
