@@ -1,4 +1,4 @@
-import { DoctorService } from './doctor-services';
+import { DoctorService } from './doctor-service';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,7 +9,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var medIssue = $("input#med-issue").val();
-    var drName = $("input#drName").val();
+    var drName = $("input#dr-name").val();
 
     (async () => {
       let doctorService = new DoctorService();
@@ -17,9 +17,13 @@ $(document).ready(function() {
       getElements();
     });
 
-    // function getElements(response) {
-    //   if(response)
-    // }
+    function getElements(response) {
+      if(response) {
+        $("p#doctors").text(`${response}`);
+      } else {
+        $("p#doctors").text("No doctors for you.");
+      }
+    }
 
   });
 });
