@@ -14,7 +14,7 @@ $(document).ready(function() {
     console.log(medIssue + " " + drName);
 
     let request = new XMLHttpRequest();
-    const url = `https://api.betterdoctor.com/2016-03-01/doctors?location=or-portland&user_key=${process.env.API_KEY}`;
+    const url = `https://api.betterdoctor.com/2016-03-01/doctors/name=${drName}&location=or-portland&user_key=${process.env.API_KEY}`;
 
     request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
@@ -28,6 +28,7 @@ $(document).ready(function() {
 
     const getElements = function(response) {
       $("p#doctors").text(response);
+      console.log(response);
     };
 
 
