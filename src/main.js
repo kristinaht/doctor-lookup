@@ -20,7 +20,6 @@ $(document).ready(function() {
     })();
 
     function getElements(response) {
-      // $("p#doctors").text(response.data[0].profile);
       for(let i=0; i<response.data.length; i++) {
         console.log(response.data[i].profile.first_name);
       }
