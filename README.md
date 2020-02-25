@@ -9,11 +9,17 @@ Website where users may enter a medical issue (ie: “sore throat”, "rash", et
 
 ## Project Specifications
 
-| Behavior | Input | Output |
-|---|:---:|:---:|
-|User enters doctor's name or medical issue into the form field and submits the form|headache | List of doctors treating headache is shown.|
-|If user submits a doctor name or |||
+User enters a medical issue or doctor's name or partial name to receive a list of doctors that meet the search criteria within Portland
+* Input: Headache
+* Output: a list of doctors who treat headache is shown. Included in the list are the name, address, website, phone number and whether they accept new patients.
 
+User enters a medical issue or doctor's name or partial name and there are no results that meet the search criteria
+* Input: Kamenko
+* Output: "OOps! No doctors for you."
+
+User submits the information but the API call is not successful
+* Input: headache
+* Output: an error message is alerted prompting the user to try again.
 ## Setup/Installation Requirements
 
 _In Terminal:_
@@ -23,8 +29,8 @@ _In Terminal:_
 * Clone the file from GitHub with HTTPS
 ```git clone https://github.com/kristinaht/dino.git```
 * Open file in your preferred text editor
-* On Mac: ```open -a {your text editor} dino```
-* On Windows: ```dino```
+* On Mac: ```open -a {your text editor} doctor-lookup```
+* On Windows: ```doctor-lookup```
 
 _Download Manually:_
 
@@ -51,7 +57,7 @@ _No known bugs at this time._
 
 ## Support and contact details
 
-_Have a bug or an issue with this application? [Open a new issue](https://github.com/kristinaht/dino) here on GitHub._
+_Have a bug or an issue with this application? [Open a new issue](https://github.com/kristinaht/doctor-lookup) here on GitHub._
 
 ## Technologies Used
 
@@ -62,7 +68,7 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 * jQuery
 * Webpack
 * Node.js
-* (API Name)
+* BetterDoctor API
 
 ### License
 

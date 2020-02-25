@@ -8,12 +8,12 @@ export class DoctorService {
       if(response.ok && response.status === 200) {
         jsonifiedResponse = await response.json();
       } else {
-        jsonifiedResponse = false;
+        jsonifiedResponse = alert("Something went wrong. Please try again.");
       }
       return jsonifiedResponse;
     }
     catch (error) {
-      return false;
+      return alert("Something went wrong. Please try again.");
     }
   }
 }
