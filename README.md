@@ -5,17 +5,14 @@
 #### By _**Kristina Hengster Tintor**_
 
 ## Description
-
-
-
-
+Website where users may enter a medical issue (ie: “sore throat”, "rash", etc.) into a form, submit it, and receive a list of doctors in Portland, Oregon who can treat their medical issue.
 
 ## Project Specifications
 
 | Behavior | Input | Output |
 |---|:---:|:---:|
 
-||||
+|User enters doctor's name or medical issue into the form field and submits the form|Michelle Berlin | Program takes the information and outputs:  |
 
 ## Setup/Installation Requirements
 
