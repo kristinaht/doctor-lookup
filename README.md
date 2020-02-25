@@ -11,8 +11,8 @@ Website where users may enter a medical issue (ie: “sore throat”, "rash", et
 
 | Behavior | Input | Output |
 |---|:---:|:---:|
-
-|User enters doctor's name or medical issue into the form field and submits the form|Michelle Berlin | Program takes the information and outputs:  |
+|User enters doctor's name or medical issue into the form field and submits the form|headache | List of doctors treating headache is shown.|
+|If user submits a doctor name or |||
 
 ## Setup/Installation Requirements
 
