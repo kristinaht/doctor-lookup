@@ -8,10 +8,7 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
 
-    var medIssue = $("input#med-issue").val();
-    var drName = $("input#dr-name").val();
-
-    console.log(medIssue + " " + drName);
+    var query = $("input#med-issue").val();
 
     (async () => {
       let doctorService = new DoctorService();
@@ -27,8 +24,15 @@ $(document).ready(function() {
      
         $("div#display-response").show();          
         
-        $("span.fName").text(response.data[i].profile.first_name);
-        $("span.lName").text(response.data[i].profile.last_name);
+        // response.data.forEach(function(response) {
+        //   $("p.drName").prepend('<span>'(response.data[i].profile.first_name)`</span>`);
+        // });
+
+        // $("#display-response").append(`${response.data[i].profile.first_name}`);
+        $("span.fName").append(`${response.data[i].profile.first_name} ${response.data[i].profile.last_name}<br>`);
+        // $("span.lName").append(`<br>`);
+
+       
 
         for(let index=0; index<response.data[i].practices.length; index++) {
           console.log(response.data[i].practices[index].visit_address.street);
@@ -42,7 +46,7 @@ $(document).ready(function() {
           $("span.state").text(response.data[i].practices[index].visit_address.state);
           $("span.zip").text(response.data[i].practices[index].visit_address.zip);
           $("span.phone").text(response.data[i].practices[index].phones.number);
-          $("span.website").text(response.data[i].practices[index].phones[index].number);
+          // $("span.website").text(response.data[i].practices[index].phones[index].number);
           
 
           if(response.data[i].practices[index].accepts_new_patients == true) {
