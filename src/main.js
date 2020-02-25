@@ -10,8 +10,6 @@ $(document).ready(function() {
 
     let query = $("#query").val();
    
-
-
     (async () => {
       let doctorService = new DoctorService();
       const response = await doctorService.getDoctorService(query);
@@ -22,18 +20,17 @@ $(document).ready(function() {
       $("div#display-response").show();  
       let output = "";
       let outputNewPts = "";
+      let outputWebsite = "";
+
       for(let i=0; i<response.data.length; i++) {
-        output += `<p>${response.data[i].profile.first_name} ${response.data[i].profile.last_name}</p>`;
-
-        $("div#display-response").html(output);
-
         for(let index=0; index<response.data[i].practices.length; index++) {
 
           outputNewPts = (response.data[i].practices[index].accepts_new_patients) ? `<p>Accepts new patients</p>` : `<p>Doesn't accept new patients.</p>`;
+
+          outputWebsite = (response.data[i].practices[0].website) ? `<p>${response.data[i].practices[0].website}</p>` : `<p>No website, please call the clinic.</p>`; 
         
-          output += `<p>${response.data[i].practices[index].visit_address.street}</p>${response.data[i].practices[index].visit_address.city} ${response.data[i].practices[index].visit_address.state} ${response.data[i].practices[index].visit_address.zip}</p><p>${outputNewPts}</p> `;
+          output += `<div class="box"><p>${response.data[i].profile.first_name} ${response.data[i].profile.last_name}</p><p>${response.data[i].practices[index].visit_address.street}</p>${response.data[i].practices[index].visit_address.city} ${response.data[i].practices[index].visit_address.state} ${response.data[i].practices[index].visit_address.zip}</p><p>${response.data[i].practices[index].phones[0].number}</p><p>${outputNewPts}</p><p>${outputWebsite}</p></div>`;
           $("div#display-response").html(output);
-          $("span.phone").text(response.data[i].practices[index].phones.number);
         }
       }
     }
