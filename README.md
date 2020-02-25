@@ -27,18 +27,18 @@ _In Terminal:_
 * Navigate to where you want this application to be saved, i.e.:
 ```cd desktop```
 * Clone the file from GitHub with HTTPS
-```git clone https://github.com/kristinaht/dino.git```
+```git clone https://github.com/kristinaht/doctor-lookup```
 * Open file in your preferred text editor
 * On Mac: ```open -a {your text editor} doctor-lookup```
 * On Windows: ```doctor-lookup```
 
 _Download Manually:_
 
-* Navigate to https://github.com/kristinaht/dino.
+* Navigate to https://github.com/kristinaht/doctor-lookup.
 * Click green "Clone or Download" button.
 * Click "Download ZIP".
 * Click downloaded file to unzip.
-* Open folder called "dino".
+* Open folder called "doctor-lookup".
 * Right click "index.html" and select your preferred browser or text editor.
 
 _Note For Editors:_ 
